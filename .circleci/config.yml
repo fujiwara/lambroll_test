@@ -3,7 +3,7 @@ orbs:
   aws-cli: circleci/aws-cli@0.1
   ecspresso: fujiwara/lambroll@0
 jobs:
-  deploy_htpasswd:
+  deploy:
     executor: aws-cli/default
     steps:
       - checkout
@@ -11,12 +11,13 @@ jobs:
       - aws-cli/configure
       - lambroll/install
       - run: |
-        cd hello && make deploy
+          cd hello && make deploy
+
 workflows:
   version: 2
-  deploy_htpasswd:
+  deploy:
     jobs:
-      - deploy_htpasswd:
+      - deploy:
           filters:
             branches:
               only:
