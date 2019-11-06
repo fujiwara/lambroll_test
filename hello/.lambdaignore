@@ -2,3 +2,5 @@
 function.json
 function.zip
 .git/*
+Makefile
+.gitignore
