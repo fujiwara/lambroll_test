@@ -8,8 +8,16 @@ jobs:
       - uses: fujiwara/lambroll@v0
         with:
           version: v0.9.1
+      - uses: kayac/ecspresso@v0
+        with:
+          version: v0.17.2
       - run: |
           which lambroll
           file $(which lambroll)
           lambroll version
           lambroll --help
+      - run: |
+          which ecspresso
+          file $(which ecspresso)
+          ecspresso version
+          ecspresso --help
