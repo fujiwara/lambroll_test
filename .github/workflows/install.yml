@@ -6,11 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: fujiwara/lambroll@v0
-        with:
-          version: v0.9.1
       - uses: kayac/ecspresso@v0
-        with:
-          version: v0.17.2
       - run: |
           which lambroll
           file $(which lambroll)
