@@ -1,0 +1,13 @@
+on: [push]
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: fujiwara/lambroll@v0-actions
+        with:
+          version: v0.9.1
+      - run: |
+          which lambroll
+          lambroll version
+          lambroll --help
