@@ -6,5 +6,11 @@
   "PackageType": "Image",
   "Code": {
     "ImageUri": "{{must_env `AWS_ACCOUNT_ID`}}.dkr.ecr.ap-northeast-1.amazonaws.com/lambda/test:{{must_env `TAG`}}"
+  },
+  "Environment": {
+    "Variables": {
+      "FOO": "BAR",
+      "TAG": "{{must_env `TAG`}}"
+    }
   }
 }
