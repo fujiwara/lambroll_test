@@ -5,17 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: fujiwara/lambroll@v0
       - uses: kayac/ecspresso@v0
         with:
           version: v1.1.3
       - run: |
-          which lambroll
-          file $(which lambroll)
-          lambroll version
-          lambroll --help
-      - run: |
-          which ecspresso
-          file $(which ecspresso)
           ecspresso version
-          ecspresso --help
