@@ -2,5 +2,5 @@
 function.json
 function.zip
 .git/*
-Makefile
-.gitignore
+.terraform/*
+terraform.tfstate

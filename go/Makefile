@@ -2,7 +2,14 @@ export AWS_ACCOUNT_ID := $(shell aws sts get-caller-identity --query 'Account' -
 
 build:
 
-deploy:
+bootstrap: *.go go.*
+	GOOS=linux GOARCH=arm64 go build -o bootstrap main.go
+	file bootstrap
+
+clean:
+	rm -f bootstrap
+
+deploy: bootstrap
 	lambroll deploy --log-level debug
 
 diff:
