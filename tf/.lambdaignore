@@ -1,0 +1,8 @@
+.lambdaignore
+function.json
+function.zip
+.git/*
+.terraform/*
+terraform.tfstate
+Makefile
+*.zip
