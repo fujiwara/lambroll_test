@@ -40,8 +40,23 @@ resource "null_resource" "lambda" {
   }
 
   provisioner "local-exec" {
-    command = "ROLE_ARN=${aws_iam_role.lambda.arn} lambroll deploy"
+    command = "sleep 10; lambroll deploy --tfstate terraform.tfstate"
+    environment = {
+      ROLE_ARN = aws_iam_role.lambda.arn
+    }
   }
+
+  provisioner "local-exec" {
+    command = "lambroll delete --tfstate terraform.tfstate"
+    environment = {
+      ROLE_ARN = "DELETED"
+    }
+    when = destroy
+  }
+
+  depends_on = [
+    aws_iam_role_policy_attachment.lambda,
+  ]
 }
 
 data "aws_lambda_function" "lambda" {
