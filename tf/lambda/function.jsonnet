@@ -1,8 +1,8 @@
 {
-  Description: '',
+  Description: 'xxx',
   FunctionName: 'test_lambda',
   MemorySize: 128,
-  Role: '{{ env_or_tfstate `ROLE_ARN` `aws_iam_role.lambda.arn` }}',
+  Role: '{{or (env `ROLE_ARN` ``) (tfstate `aws_iam_role.lambda.arn`)}}',
   Runtime: 'nodejs16.x',
   Handler: 'index.handler',
 }
