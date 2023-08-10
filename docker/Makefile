@@ -21,3 +21,9 @@ invoke:
 
 logs:
 	lambroll logs --follow
+
+versions:
+	lambroll versions
+
+diff:
+	lambroll diff

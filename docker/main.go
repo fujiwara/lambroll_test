@@ -15,6 +15,7 @@ func main() {
 	mux.HandleFunc("/", handleRoot)
 	mux.HandleFunc("/hello", handleHello)
 	mux.HandleFunc("/printenv", handleEnv)
+	mux.HandleFunc("/cwd", handleCwd)
 	ridge.Run(":8080", "/", mux)
 }
 
@@ -39,4 +40,10 @@ func handleEnv(w http.ResponseWriter, r *http.Request) {
 		}
 		fmt.Fprintln(w, env)
 	}
+}
+
+func handleCwd(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/plain")
+	d, _ := os.Getwd()
+	fmt.Fprintln(w, d)
 }

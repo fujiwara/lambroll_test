@@ -7,6 +7,15 @@
   "Code": {
     "ImageUri": "{{must_env `AWS_ACCOUNT_ID`}}.dkr.ecr.ap-northeast-1.amazonaws.com/lambda/test:{{must_env `TAG`}}"
   },
+  "ImageConfig": {
+    "Command": [
+      ""
+    ],
+    "EntryPoint": [
+      "/usr/local/bin/main"
+    ],
+    "WorkingDirectory": "/var/task"
+  },
   "Environment": {
     "Variables": {
       "FOO": "BAR",
