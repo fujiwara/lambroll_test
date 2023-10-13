@@ -3,6 +3,7 @@
   Environment: {
     Variables: {
       NOW: '{{ must_env `NOW` }}',
+      FOO: '{{ ssm `/foo` }}',
     },
   },
   Description: '',
@@ -21,6 +22,6 @@
     //ImageUri: '079121286994.dkr.ecr.ap-northeast-1.amazonaws.com/lambda-hello-world:latest',
   //},
   //PackageType: 'Image',
-    Runtime: 'python3.8',
+    Runtime: 'python3.9',
     Handler: 'app.handler',
 }
