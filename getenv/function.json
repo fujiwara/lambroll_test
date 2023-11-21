@@ -1,0 +1,39 @@
+{
+  "Code": null,
+  "FunctionName": "getenv",
+  "Role": "arn:aws:iam::079121286994:role/AWSLambdaBasicExecutionRole",
+  "Architectures": [
+    "x86_64"
+  ],
+  "CodeSigningConfigArn": null,
+  "DeadLetterConfig": null,
+  "Description": "xxx",
+  "Environment": {
+    "Variables": {
+      "BAR": "baz",
+      "FOO": "bar",
+      "NODE_ENV": "production"
+    }
+  },
+  "EphemeralStorage": {
+    "Size": 512
+  },
+  "FileSystemConfigs": null,
+  "Handler": "index.handler",
+  "ImageConfig": null,
+  "KMSKeyArn": null,
+  "Layers": null,
+  "MemorySize": 128,
+  "PackageType": "Zip",
+  "Publish": false,
+  "Runtime": "nodejs18.x",
+  "SnapStart": {
+    "ApplyOn": "None"
+  },
+  "Tags": {},
+  "Timeout": 30,
+  "TracingConfig": {
+    "Mode": "PassThrough"
+  },
+  "VpcConfig": null
+}
