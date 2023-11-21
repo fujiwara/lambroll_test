@@ -1,12 +1,7 @@
 {
-  "Code": null,
-  "FunctionName": "getenv",
-  "Role": "arn:aws:iam::079121286994:role/AWSLambdaBasicExecutionRole",
   "Architectures": [
     "x86_64"
   ],
-  "CodeSigningConfigArn": null,
-  "DeadLetterConfig": null,
   "Description": "xxx",
   "Environment": {
     "Variables": {
@@ -18,14 +13,14 @@
   "EphemeralStorage": {
     "Size": 512
   },
-  "FileSystemConfigs": null,
+  "FunctionName": "getenv",
   "Handler": "index.handler",
-  "ImageConfig": null,
-  "KMSKeyArn": null,
-  "Layers": null,
+  "LoggingConfig": {
+    "LogFormat": "Text",
+    "LogGroup": "/aws/lambda/getenv"
+  },
   "MemorySize": 128,
-  "PackageType": "Zip",
-  "Publish": false,
+  "Role": "arn:aws:iam::079121286994:role/AWSLambdaBasicExecutionRole",
   "Runtime": "nodejs18.x",
   "SnapStart": {
     "ApplyOn": "None"
@@ -34,6 +29,5 @@
   "Timeout": 30,
   "TracingConfig": {
     "Mode": "PassThrough"
-  },
-  "VpcConfig": null
+  }
 }
