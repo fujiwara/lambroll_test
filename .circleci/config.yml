@@ -16,6 +16,11 @@ jobs:
       - run:
           command: |
             ecspresso version
+      - lambroll/install:
+          version: v1.0.0-rc2
+      - run:
+          command: |
+            lambroll version
   deploy:
     executor: aws-cli/default
     steps:
