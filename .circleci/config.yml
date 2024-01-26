@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   aws-cli: circleci/aws-cli@4.1.2
-  lambroll: fujiwara/lambroll@1.0.0
+  lambroll: fujiwara/lambroll@2.0.1
   ecspresso: fujiwara/ecspresso@2.0.3
 
 jobs:
