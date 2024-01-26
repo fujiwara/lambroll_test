@@ -1,28 +1,18 @@
 version: 2.1
 
 orbs:
-  aws-cli: circleci/aws-cli@0.1.3
-  lambroll: fujiwara/lambroll@0.0.7
-  ecspresso: fujiwara/ecspresso@0.0.15
+  aws-cli: circleci/aws-cli@4.1.2
+  lambroll: fujiwara/lambroll@1.0.0
+  ecspresso: fujiwara/ecspresso@2.0.3
 
 jobs:
   install:
     docker:
-      - image: cimg/base:2020.12
+      - image: cimg/base:2024.01
     steps:
       - checkout
       - ecspresso/install:
-          version: latest
-      - run:
-          command: |
-            ecspresso version
-      - ecspresso/install:
-          version: v1.5.0
-      - run:
-          command: |
-            ecspresso version
-      - ecspresso/install:
-          version: v1.6.0
+          version: v2.3.2
       - run:
           command: |
             ecspresso version
