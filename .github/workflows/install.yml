@@ -5,7 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: fujiwara/lambroll@v0
+      - uses: fujiwara/lambroll@v1
+        with:
+          version: v1.0.0-rc2
       - uses: kayac/ecspresso@v1
         with:
           version: latest

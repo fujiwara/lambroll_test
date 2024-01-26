@@ -14,7 +14,6 @@
   SnapStart: {
     ApplyOn: 'PublishedVersions',
   },
-  Tags: {},
   Timeout: 15,
   TracingConfig: {
     Mode: 'PassThrough',
