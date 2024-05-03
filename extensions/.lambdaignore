@@ -1,0 +1,5 @@
+*.zip
+go.*
+*.go
+Makefile
+extensions/*

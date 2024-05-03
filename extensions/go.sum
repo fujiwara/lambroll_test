@@ -1,0 +1,4 @@
+github.com/aws/aws-lambda-go v1.45.0 h1:3xS35Dlc8ffmcwfcKTyqJGiMuL0UDvkQaVUrI5yHycI=
+github.com/aws/aws-lambda-go v1.45.0/go.mod h1:dpMpZgvWx5vuQJfBt0zqBha60q7Dd7RfgJv23DymV8A=
+github.com/fujiwara/lamblocal v0.0.4 h1:ZfTQ1JgXtjjRdEGTckmazSUqYPVFGGxPj9EhNjcx9xQ=
+github.com/fujiwara/lamblocal v0.0.4/go.mod h1:D1u13t8PSyXysDOH8pmft4jOtyvWbDNVcGTGuLvjfBY=
