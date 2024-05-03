@@ -1,0 +1,6 @@
+aws lambda add-permission \
+--statement-id "AllowCloudFrontServicePrincipal" \
+--action "lambda:InvokeFunctionUrl" \
+--principal "cloudfront.amazonaws.com" \
+--source-arn "arn:aws:cloudfront::314472643515:distribution/EJUBO80Y6991M" \
+--function-name hello-ridge
