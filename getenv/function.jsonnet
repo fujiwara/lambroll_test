@@ -1,15 +1,33 @@
 {
-  Description: 'xxx',
-  FunctionName: 'getenv',
-  MemorySize: 128,
-  Role: 'arn:aws:iam::{{ must_env `AWS_ACCOUNT_ID` }}:role/AWSLambdaBasicExecutionRole',
-  Runtime: 'nodejs18.x',
-  Handler: 'index.handler',
+  Architectures: [
+    'x86_64',
+  ],
+  Description: 'xxx yyyy',
   Environment: {
     Variables: {
+      BAR: 'bazx',
+      FOO: 'barx',
       NODE_ENV: 'production',
-      FOO: 'bar',
-      BAR: 'baz',
     },
+  },
+  EphemeralStorage: {
+    Size: 512,
+  },
+  FunctionName: 'getenv',
+  Handler: 'index.handler',
+  LoggingConfig: {
+    LogFormat: 'Text',
+    LogGroup: '/aws/lambda/getenv',
+  },
+  MemorySize: 128,
+  Role: 'arn:aws:iam::079121286994:role/AWSLambdaBasicExecutionRole',
+  Runtime: 'nodejs18.x',
+  SnapStart: {
+    ApplyOn: 'None',
+  },
+  Tags: {},
+  Timeout: 30,
+  TracingConfig: {
+    Mode: 'PassThrough',
   },
 }

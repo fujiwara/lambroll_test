@@ -1,11 +1,26 @@
 {
-    "Architectures": [
-        "arm64"
-    ],
-    "FunctionName": "go",
-    "Handler": "my.handler.file",
-    "MemorySize": 128,
-    "Role": "arn:aws:iam::079121286994:role/test_lambda_role",
-    "Runtime": "provided.al2",
-    "Timeout": 900
+  "Architectures": [
+    "arm64"
+  ],
+  "Description": "",
+  "EphemeralStorage": {
+    "Size": 512
+  },
+  "FunctionName": "go",
+  "Handler": "my.handler.file",
+  "LoggingConfig": {
+    "LogFormat": "Text",
+    "LogGroup": "/aws/lambda/go"
+  },
+  "MemorySize": 128,
+  "Role": "arn:aws:iam::079121286994:role/test_lambda_role",
+  "Runtime": "provided.al2023",
+  "SnapStart": {
+    "ApplyOn": "None"
+  },
+  "Tags": {},
+  "Timeout": 900,
+  "TracingConfig": {
+    "Mode": "PassThrough"
+  }
 }

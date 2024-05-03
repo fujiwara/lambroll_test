@@ -3,18 +3,23 @@
   Environment: {
     Variables: {
       NOW: '{{ must_env `NOW` }}',
-      FOO: '{{ ssm `/foo` }}',
     },
   },
   Description: '',
   FunctionName: 'hello',
+  _LoggingConfig: {
+    ApplicationLogLevel: 'DEBUG',
+    LogFormat: 'JSON',
+    LogGroup: '/aws/lambda/hello_json',
+    SystemLogLevel: 'INFO',
+  },
   MemorySize: std.extVar('memorySize'),
   Role: 'arn:aws:iam::%s:role/test_lambda_role' % [ std.extVar('accountID') ],
   Tags: {
     Env: 'dev',
-    Foo: 'bar',
+    Foo: 'barzz',
   },
-  Timeout: 3,
+  Timeout: 5,
   TracingConfig: {
     Mode: 'PassThrough',
   },

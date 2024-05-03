@@ -5,4 +5,3 @@ function.zip
 .git/*
 .terraform/*
 terraform.tfstate
-Makefile

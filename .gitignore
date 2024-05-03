@@ -13,3 +13,9 @@
 
 *~
 .envrc
+bootstrap
+handler
+.envrc
+*.zip
+*.gz
+.terraform/

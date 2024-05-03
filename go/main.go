@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"log"
 	"os"
 
 	"github.com/aws/aws-lambda-go/lambda"
@@ -13,6 +14,7 @@ type MyEvent struct {
 
 func HandleRequest(ctx context.Context, name MyEvent) (string, error) {
 	b, _ := os.ReadFile("/proc/cpuinfo")
+	log.Println("hello", name.Name)
 	return string(b), nil
 }
 

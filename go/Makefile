@@ -23,3 +23,6 @@ init:
 
 invoke:
 	lambroll invoke --log-level debug
+
+versions:
+	lambroll versions --log-level debug

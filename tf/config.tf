@@ -40,16 +40,16 @@ resource "null_resource" "lambda" {
   }
 
   provisioner "local-exec" {
-    command     = "lambroll deploy --tfstate ../terraform.tfstate"
-    working_dir = "lambda"
+    command     = "lambroll deploy --tfstate ../tf/terraform.tfstate"
+    working_dir = "../lambda"
     environment = {
       ROLE_ARN = aws_iam_role.lambda.arn
     }
   }
 
   provisioner "local-exec" {
-    command     = "lambroll delete --tfstate ../terraform.tfstate"
-    working_dir = "lambda"
+    command     = "lambroll delete --tfstate ../tf/terraform.tfstate"
+    working_dir = "../lambda"
     when        = destroy
   }
 
