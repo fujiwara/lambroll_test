@@ -11,10 +11,11 @@ push: image
 	docker tag lambda-docker:$(TAG) $(AWS_ACCOUNT_ID).dkr.ecr.ap-northeast-1.amazonaws.com/lambda/test:$(TAG)
 	docker push $(AWS_ACCOUNT_ID).dkr.ecr.ap-northeast-1.amazonaws.com/lambda/test:$(TAG)
 
-deploy: push
-	lambroll deploy --log-level debug # --dry-run
+deploy: #push
+	lambroll deploy --log-level debug --keep-versions 10 --dry-run
 
-clean: rm -f main
+clean:
+	rm -f main
 
 invoke:
 	lambroll invoke --log-level debug
@@ -26,4 +27,4 @@ versions:
 	lambroll versions
 
 diff:
-	lambroll diff
+	lambroll diff --ignore .ImageConfig
