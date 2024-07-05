@@ -2,14 +2,19 @@
   Architectures: [
     'x86_64',
   ],
+  Environment: {
+    Variables: {
+      FIRETAP_STREAM_NAME: 'firetap',
+    },
+  },
   EphemeralStorage: {
     Size: 512,
   },
   FunctionName: 'hello-extensions',
-  Handler: 'bootstrap',
-  Layers: [
-    'arn:aws:lambda:ap-northeast-1:314472643515:layer:test-layer-1:10',
-  ],
+  Handler: 'handler',
+/*  Layers: [
+    'arn:aws:lambda:ap-northeast-1:314472643515:layer:firetap:14',
+  ],*/
   LoggingConfig: {
     LogFormat: 'Text',
     LogGroup: '/aws/lambda/hello-extensions',

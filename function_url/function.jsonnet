@@ -5,6 +5,11 @@
   EphemeralStorage: {
     Size: 512,
   },
+  Environment: {
+    Variables: {
+      ALIAS: '{{ env `ALIAS` `latest` }}',
+    },
+  },
   FunctionName: 'hello-ridge',
   Handler: 'bootstrap',
   LoggingConfig: {

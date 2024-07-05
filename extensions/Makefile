@@ -2,13 +2,11 @@ export GOOS=linux
 export GOARCH=amd64
 export CGO_ENABLED=0
 
-handler: *.go go.mod go.sum
-	go build -o handler main.go
-
-bootstrap:
+bootstrap: *.go go.mod go.sum
+	go build -o bootstrap main.go
 
 clean:
-	rm -f handler *.zip extensions/*
+	rm -f bootstrap *.zip extensions/*
 
-deploy: bootstrap handler
+deploy: bootstrap
 	lambroll deploy

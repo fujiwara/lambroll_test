@@ -16,5 +16,5 @@ func main() {
 
 func handleHello(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/plain")
-	fmt.Fprintf(w, "Hello XXX %s\n", r.FormValue("name"))
+	fmt.Fprintf(w, "Hello %s\n", os.Getenv("ALIAS"))
 }
