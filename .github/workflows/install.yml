@@ -4,20 +4,13 @@ jobs:
   install:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: fujiwara/lambroll@v1
+      - uses: fujiwara/lambroll@pr417
         with:
-          version: v1.0.0-rc2
-      - uses: kayac/ecspresso@v1
-        with:
-          version: latest
+          version: v1.0.1
+          arch: arm64
+          os: linux
       - run: |
           which lambroll
           file $(which lambroll)
           lambroll version
           lambroll --help
-      - run: |
-          which ecspresso
-          file $(which ecspresso)
-          ecspresso version
-          ecspresso --help
