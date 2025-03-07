@@ -1,13 +1,15 @@
+local caller = std.native('caller_identity')();
+local env = std.native('env');
 {
   Architectures: [
-    'x86_64',
+    'arm64',
   ],
   EphemeralStorage: {
     Size: 512,
   },
   Environment: {
     Variables: {
-      ALIAS: '{{ env `ALIAS` `latest` }}',
+      ALIAS: env('ALIAS', 'latest'),
     },
   },
   FunctionName: 'hello-ridge',
@@ -17,7 +19,7 @@
     LogGroup: '/aws/lambda/hello-ridge',
   },
   MemorySize: 128,
-  Role: 'arn:aws:iam::314472643515:role/AWSLambdaBasicExecutionRole',
+  Role: 'arn:aws:iam::%s:role/AWSLambdaBasicExecutionRole' % [caller.Account],
   Runtime: 'provided.al2023',
   SnapStart: {
     ApplyOn: 'None',

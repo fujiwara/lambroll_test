@@ -1,6 +1,6 @@
-export AWS_ACCOUNT_ID := $(shell aws sts get-caller-identity --query 'Account' --output text)
-OPT := --function function.jsonnet --log-level debug --ext-str accountID=$(AWS_ACCOUNT_ID) --ext-code memorySize=128
+OPT ?= --function function.jsonnet # --log-level debug
 ECR := $(AWS_ACCOUNT_ID).dkr.ecr.$(AWS_REGION).amazonaws.com/lambda-hello-world:latest
+export DESCRIPTION := Hello, World
 
 build:
 
@@ -25,11 +25,14 @@ init:
 invoke:
 	lambroll invoke $(OPT)
 
+archive:
+	lambroll archive $(OPT)
+
 versions:
 	lambroll versions $(OPT)
 
 render:
-	lambroll render $(OPT) --jsonnet
+	@lambroll render $(OPT) # --jsonnet
 
 rollback:
 	lambroll rollback $(OPT) --delete-version --alias=latest

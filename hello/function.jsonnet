@@ -1,20 +1,31 @@
 {
-  //Architectures: ['amd64'],
+  Architectures: [
+    'x86_64',
+  ],
   Environment: {
     Variables: {
-      NOW: '{{ must_env `NOW` }}',
+      Account: '079121286994',
+      Arn: 'arn:aws:iam::079121286994:user/fujiwara-shunichiro',
+      UserId: 'AIDAJ3OG2XJN4U7FCLFVU',
     },
   },
-  Description: '',
+  EphemeralStorage: {
+    Size: 512,
+  },
   FunctionName: 'hello',
-  _LoggingConfig: {
+  Handler: 'app.handler',
+  LoggingConfig: {
     ApplicationLogLevel: 'DEBUG',
     LogFormat: 'JSON',
     LogGroup: '/aws/lambda/hello_json',
     SystemLogLevel: 'INFO',
   },
-  MemorySize: std.extVar('memorySize'),
-  Role: 'arn:aws:iam::%s:role/test_lambda_role' % [ std.extVar('accountID') ],
+  MemorySize: 128,
+  Role: 'arn:aws:iam::079121286994:role/test_lambda_role',
+  Runtime: 'python3.9',
+  SnapStart: {
+    ApplyOn: 'None',
+  },
   Tags: {
     Env: 'dev',
     Foo: 'barzz',
@@ -23,10 +34,4 @@
   TracingConfig: {
     Mode: 'PassThrough',
   },
-  //Code: {
-    //ImageUri: '079121286994.dkr.ecr.ap-northeast-1.amazonaws.com/lambda-hello-world:latest',
-  //},
-  //PackageType: 'Image',
-    Runtime: 'python3.9',
-    Handler: 'app.handler',
 }
