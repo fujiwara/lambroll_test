@@ -10,6 +10,7 @@ local env = std.native('env');
   Environment: {
     Variables: {
       ALIAS: env('ALIAS', 'latest'),
+      RIDGE_STREAMING_RESPONSE: env('RIDGE_STREAMING_RESPONSE', ''),
     },
   },
   FunctionName: 'hello-ridge',
